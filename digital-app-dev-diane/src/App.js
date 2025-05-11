@@ -25,7 +25,7 @@ export default function App() {
     if (input === "") {
       setFormInput({
         input: "",
-        result: 0,
+        result: 0
       });
       return;
     }

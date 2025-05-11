@@ -43,13 +43,13 @@
   border: 1px solid grey;
   border-radius: 4px;
   font-size: 1rem;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s
 }
 
 .number-input:focus {
   outline: none;
   border-color: navy;
-  box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.2)
 }
 
 .submit-button {
@@ -60,32 +60,32 @@
   border-radius: 4px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s
 }
 
 .submit-button:hover {
-  background-color: #2c2e6d;
+  background-color: #2c2e6d
 }
 
 .submit-button:active {
-  background-color: #4348bf;
+  background-color: #4348bf
 }
 
 .result-section {
   padding: 1.5rem;
   background-color: white;
   border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1)
 }
 
 .result-title {
   margin-top: 0;
   margin-bottom: 1rem;
-  color: black;
+  color: black
 }
 
 .result-value {
   font-size: 1.5rem;
   font-weight: bold;
-  color: navy;
+  color: navy
 }
