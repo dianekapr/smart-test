@@ -1,25 +1,79 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./index.css";
 
-function App() {
+export default function App() {
+  const [formInput, setFormInput] = useState({
+    input: "",
+    result: 0,
+  });
+
+  function handleInput(e) {
+    //please put your logic here
+    const val = e.target.value;
+
+    if (!isNaN(val) && !val.includes(".") && !val.includes(",")) {
+      setFormInput((prev) => ({
+        ...prev,
+        input: val,
+      }));
+    }
+  }
+
+  function handleSubmit() {
+    const { input } = formInput;
+
+    if (input === "") {
+      setFormInput({
+        input: "",
+        result: 0,
+      });
+      return;
+    }
+
+    const original = parseInt(input, 10);
+    const reversed = parseInt(input.split("").reverse().join(""), 10);
+    const difference = Math.abs(original - reversed);
+
+    setFormInput((prev) => ({
+      ...prev,
+      result: difference,
+    }));
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <div className="container">
+        <div className="input-section">
+          <label htmlFor="number-input" className="input-label">
+            Number:
+          </label>
+          <div className="input">
+            <input
+              type="text"
+              id="number-input"
+              value={formInput.input}
+              onChange={handleInput}
+              className="number-input"
+              placeholder="Enter a number"
+              aria-label="Enter a number to calculate difference"
+            />
+            <button
+              onClick={handleSubmit}
+              className="submit-button"
+              aria-label="Submit"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+
+        <div className="result-section">
+          <h3 className="result-title">Result: </h3>
+          <div className="resul-value" aria-live="polite">
+            {formInput.result}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
-
-export default App;
