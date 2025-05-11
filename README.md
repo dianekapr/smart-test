@@ -4,7 +4,7 @@
 To get started, clone the repository, navigate into the project folder, and open it in VSCode. Run the following commands in your terminal"
 
 ```
-git clone https://github.com/dianekapr/smart-test-diane.git
+git clone https://github.com/dianekapr/smart-test.git
 cd smart-test-diane
 code .
 ```
